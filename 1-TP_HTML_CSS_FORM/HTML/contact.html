@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../CSS/style.css">
+        <title>Contact</title>
+    </head>
+    <body>
+        <header>
+            <img src="https://picsum.photos/id/100/800/200" alt="image d'en tete">
+            <h1>Accueil</h1>
+            <nav>
+                <ul>
+                    Accés rapides
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#anchor_blog">Blog</a></li>
+                    <li><a href="#">Galerie</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <fieldset>
+            <legend>Formulaire de contact :</legend>
+            <form action="traitement.php" method="post">
+                <div class="champ">
+                    <label for="lname" class="libelle">Nom :<span class="requiredInput">*</span></label>
+                    <input type="text" id="lname" name="lname" placeholder="ex : Michel" maxlength="20" minlength="2" required>
+                </div>
+                <br>
+                <div class="champ">
+                    <label for="email" class="libelle">Email : <span class="requiredInput">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="ex : super@internet.com" required>
+                </div>
+                <div>
+                    <label for="comms" class="libelle">Commenter : </label>
+                    <textarea name="comms" id="comms" cols="70" rows="10" class="leCommentaire" placeholder="ex : ma requête est la suivante : je souhaiterais (...)"></textarea>
+                </div>
+                <div>
+                    <label for="sendCopy" class="libelle">Envoyer une copie</label>
+                    <input type="checkbox" id="sendCopy" value="none">
+                </div>
+                <div>
+                    <label for="sendBtn" class="champs">Envoyer le formulaire : </label>
+                    <input type="submit" value="Valider" id="sendBtn" class="endFormBtn">
+                    <label for="resetBtn" class="champs">Effacer vos réponses :</label>
+                    <input type="reset" value="Reset" id="resetBtn" class="endFormBtn">
+                </div>
+            </form>
+        </fieldset>
+        <footer>
+            <ul>
+                <li><a href="https://puginarug.com/">puginarug</a></li>
+                <li><a href="http://corndog.io/">Corndog</a></li>
+                <li><a href="https://hooooooooo.com/">HEYHO</a></li>
+                <li><a href="https://thatsthefinger.com/">thatsthefinger</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>
