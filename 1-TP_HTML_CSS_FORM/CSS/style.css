@@ -79,10 +79,20 @@ label {
 }
 
 .carousel-items {
+    
     display: flex;
     overflow-x: scroll;
     padding: 1rem 0;
 }
 .carousel-item {
+    border-style: solid;
+    border-radius: 1px;
+    border-color: black;
     margin-left: 1rem;
+}
+
+
+.card-title {
+    margin-left: auto;
+    margin-right: auto;   
 }
