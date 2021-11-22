@@ -77,3 +77,12 @@ a:hover {
 label {
     width: 280px;
 }
+
+.carousel-items {
+    display: flex;
+    overflow-x: scroll;
+    padding: 1rem 0;
+}
+.carousel-item {
+    margin-left: 1rem;
+}
