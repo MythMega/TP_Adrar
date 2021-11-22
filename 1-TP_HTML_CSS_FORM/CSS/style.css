@@ -2,7 +2,6 @@ html {
     background: radial-gradient(circle at top, #CCDAE0, #EDF2F4);
 }
 
-
 header {
     text-align: center;
 }
@@ -15,20 +14,24 @@ h1 {
 }
 
 p {
-    text-indent: 5em /*met un alinéa*/
+    text-indent: 5em ;/*met un alinéa à chaque debut de <p> */
+    
+    margin-left: 5vw;      /* ces deux lignes de codes permettent */
+    margin-right: 5vw;     /* d'espacer un peu bordures et textes */
 }
 
 h3 {
     color: #2e422b;
     font-weight: bolder;
-    /*text-decoration-style: dashed; */
-    text-decoration:dashed;
+    text-decoration:underline dotted;
 }
 
 article {
     border: black;
     border-radius: 1px;
     border-style: solid;
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 img {
@@ -66,7 +69,6 @@ a:hover {
 .requiredInput {
     color: red;
 }
-
 
 .champ {
     display: inline-block;
