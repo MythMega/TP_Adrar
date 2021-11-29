@@ -1,0 +1,136 @@
+* {
+	margin:0px;
+	padding:0px;
+}
+
+.OK {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 4fr ;
+    grid-gap:20px;
+    justify-items: center;
+}
+
+header {
+    /* grid-column: 1 /  4;
+    grid-row:1; */
+    background-color: #55818e;
+    justify-self: center;
+    text-align: center;
+    
+    
+}
+
+body {
+    background-color:#88665D;
+
+}
+
+h1 {
+    color: #BCAA99;
+}
+
+h2 {
+    background-color: #8E5572;
+    margin-bottom: none;
+    color: #BCAA99;
+}
+
+nav {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background-color:#8E5572;
+    padding: 20px;
+    height: 170px;
+    border-radius: 30px;
+    border: 1px solid #F2F7F2;
+    margin-top: 20px;
+    margin-left:20px;
+    
+}
+
+
+
+section {
+    grid-column: 2 /3 ;
+    grid-row: 1/2;
+    
+
+}
+
+.article {
+    display: flex;
+   
+
+}
+
+aside {
+    grid-column: 3 / 4;
+    grid-row: 1 /2 ;
+    background-color:#8E5572;
+    padding:20px;
+    border-radius: 30px;
+    border: 1px solid #F2F7F2;
+    margin-top: 20px;
+    margin-right: 20px;
+    
+}
+
+footer { 
+    grid-column: 1 /4;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:50px;
+    justify-items: center;
+}
+
+
+.box1, .foot {
+    width: auto;
+    height: 30px;
+    background-color: #F2F7F2;
+    border: solid 2px #8E5572;
+    text-align: center;
+    font-size: 25px;
+}
+
+.contain {
+    background-color: #8E5572;
+    padding: 20px;
+    border-radius: 30px;
+    border: 1px solid #F2F7F2;
+    margin-top: 20px;
+    
+
+}
+
+
+a:link {
+    text-decoration: none;
+}
+
+@media only screen and (max-width:1000px) {
+
+    nav {
+
+        background-color:#8E5572;
+        padding: 20px;
+        height: 170px;
+        border-radius: 30px;
+        border: 1px solid #F2F7F2;
+        margin-top: 20px;
+        margin-left:20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center; 
+    }
+
+
+.article { 
+    display: flex; 
+    flex-direction: column;
+}
+
+
+}
