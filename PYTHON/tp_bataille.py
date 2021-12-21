@@ -33,7 +33,7 @@ for i in range(len(liste_carte_joueur1)):
     else:
         print(f"C'est une égalite !\n\nPersonne ne remporte de point !")
     print(f"Les scores sont :      J1 > {score_j1} - {score_j2} < J2\n\n")
-    sleep(3)
+    sleep(0.5)
     print("prochain tour !")
     liste_carte_joueur1.pop()
     liste_carte_joueur2.pop()
