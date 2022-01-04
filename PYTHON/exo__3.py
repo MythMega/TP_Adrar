@@ -45,6 +45,6 @@ def verifierMail(email):
         return False
 
 
-print(obtenirAge(int(input("\n\n\nEntrez une année :\n"))))
-print(multiplier(float(input("\n\n\nEntrez un nombre 1 :\n")), float(input("\nEntrez un nombre 2 :\n"))))
-print(verifierMail(input("\n\n\nEntrez un email :\n")))
+#print(obtenirAge(int(input("\n\n\nEntrez une année :\n"))))
+#print(multiplier(float(input("\n\n\nEntrez un nombre 1 :\n")), float(input("\nEntrez un nombre 2 :\n"))))
+print("OK" if verifierMail(input("\n\n\nEntrez un email :\n")) else "NOK")
