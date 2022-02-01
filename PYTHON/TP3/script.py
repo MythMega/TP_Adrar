@@ -1,10 +1,19 @@
 import JMUtils
-from Users import *
+from UsersClass import *
+from Banque import *
+from Prenium import *
+
 
 global database_users_accounts
 database_users_accounts = [Users("Admin", "admin")]
+database_bank_list = [Banque("banq")]
 
-
+def getBankOfClient(client):
+    for i in database_bank_list:
+        liste_client = i.getListClient()
+        for j in liste_client:
+            if client == j:
+                return i
 
 def niceId(id):
     for i in database_users_accounts:
@@ -33,6 +42,7 @@ while True:
         pw = input("Votre pw : ")
         for i in database_users_accounts:
             goodId = False
+
             while not goodId:
                 if i.get_Id() == id:
                     incorrectPassword = True
@@ -57,10 +67,16 @@ while True:
         if user_connected.isAccountLess():
             answer = int(input("Voulez vous créer un compte ?\n1 : Oui\n2 :Non\n"))
             if answer == 1:
+                JMUtils.wait(0.5)
                 name = input("Votre nom : ")
                 fname = input("Votre prénom : ")
+                print("Choississez votre banque :")
+                for i in range(len(database_bank_list)):
+                    print(f"{i} : {database_bank_list[i]}\n")
+                bank = int(input("Votre choix : "))
                 account_name = f"{name} {fname}"
-                user_connected.creerCompte(account_name, 0)
+                user_connected.creerCompte(account_name, 0, database_bank_list[bank].getName())
+                database_bank_list[bank].ajouterClient(user_connected)
         else:
             working = True
             while working:
@@ -74,7 +90,7 @@ while True:
                 elif action == 3:
                     user_connected.getAccount().afficher()
                 elif action == 4:
-                    nouveauPremium = user_connected.devenirPrenium()
+                    nouveauPremium = Prenium(user_connected.get_Id(), user_connected.get_pw(), user_connected.getAccount())
                     database_users_accounts.pop(database_users_accounts.index(user_connected))
                     database_users_accounts.append(nouveauPremium)
                     user_connected = nouveauPremium
@@ -86,10 +102,15 @@ while True:
                             print("Erreur, tu as deja un crédit en cours, commence par rembourser tes dettes")
                         else:
                             amount_money = int(input("Combien voulez vous emprunter ?"))
-                            amount_month = int(input("En combien de mois voulez vous rembourser ?"))
-                            print(f"Vous aurez à rembourser un total de {amount_money}€ soit {amount_money/amount_month}€ par mois pendant {amount_month}")
-                            user_connected.faireCredit(amount_money, amount_month)
-
+                            bank_of_user = getBankOfClient(user_connected)
+                            bank_of_user.decisionBanque(amount_money)
+                            if bank_of_user.peutPreterArgent(amount_money):
+                                amount_month = int(input("En combien de mois voulez vous rembourser ?"))
+                                print(f"Vous aurez à rembourser un total de {amount_money}€ soit {amount_money/amount_month}€ par mois pendant {amount_month}")
+                                user_connected.faireCredit(amount_money, amount_month)
+                            JMUtils.wait()
+                            JMUtils.clearConsole()
+                            JMUtils.waitInput(True)
                 elif action == 0:
                     working = False
 

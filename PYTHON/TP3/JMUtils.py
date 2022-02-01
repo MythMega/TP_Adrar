@@ -27,7 +27,7 @@ def rng(min=0, max=1):
 
 
 # 1 optional arg (bool c 'announce you need to press enter')
-# default value = 0.5
+# default value = False
 # if arg1 = True, announce that an entry is needed
 def waitInput(c=False):
     if c:

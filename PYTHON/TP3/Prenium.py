@@ -1,5 +1,4 @@
-from PYTHON.TP3Macronist.Users import Users
-from Users import *
+from UsersClass import *
 
 class Prenium(Users):
 

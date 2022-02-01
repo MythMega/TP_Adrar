@@ -1,5 +1,4 @@
 from Account import *
-from Prenium import *
 import JMUtils
 
 
@@ -29,13 +28,13 @@ class Users:
         return self._account
 
 
-    def creerCompte(self, leNom, montant):
+    def creerCompte(self, leNom, montant, banque):
         if self._account is None:
             sonPassWord = input("C'est quoi ton password ?\n")
             if sonPassWord != self._password:
                 print("Error, wrong password, please try later\n")
                 return
-            sonFuturCompte = Account(leNom, montant)
+            sonFuturCompte = Account(leNom, montant, banque)
             self._account = sonFuturCompte
         else:
             print("Error, you already have an account\n")
@@ -43,10 +42,10 @@ class Users:
     def debug_get_password(self):
         return self._password
 
-    def devenirPrenium(self):
-        futurPremium = Prenium(self._nom, self._password, self._account)
-        self._isPrenium = True
-        return futurPremium
+    # def devenirPrenium(self):
+    #     futurPremium = Prenium.Prenium(self._nom, self._password, self._account)
+    #     self._isPrenium = True
+    #     return futurPremium
 
     def isPrenium(self):
         return self._isPrenium
